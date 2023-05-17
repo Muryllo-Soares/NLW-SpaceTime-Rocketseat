@@ -6,7 +6,7 @@ export default function Home() {
     <main className="grid min-h-screen grid-cols-2">
       
       {/* Section Left */}
-      <div className="relative flex-col items-start justify-between overflow-hidden border-r border-white/10 bg-[url(../assets/bg-stars.svg)] bg-cover px-28 py-16">
+      <div className="relative flex flex-col items-center justify-between overflow-hidden border-r border-white/10 bg-[url(../assets/bg-stars.svg)] bg-cover px-28 py-16">
         
         {/* Blur*/}
         <div className="absolute right-0 top-1/2 h-[288px] w-[526px] -translate-y-1/2 translate-x-1/2 rounded-full bg-purple-700 opacity-50 blur-full" />
@@ -40,7 +40,7 @@ export default function Home() {
          </div>
          {/* Copyright */}
          <div className="text-sm leading-relaxed text-gray-200">
-         Desenvolvido por <a className="underline hover:text-gray-100" href="https://github.com/Muryllo-Soares">Muryllo Soares</a>
+         Desenvolvido por {' '} <a target="_blank" rel="noreferrer" className="underline hover:text-gray-100" href="https://github.com/Muryllo-Soares">Muryllo Soares</a>
          </div>
       </div>
 
