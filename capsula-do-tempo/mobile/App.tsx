@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <View className="flex-1 items-center justify-center bg-gray-900">
-      <Text className="font-alt text-5xl font-bold text-gray-50">
+      <Text className="font-alt text-5xl  text-gray-50">
         Hello World
       </Text>
       <StatusBar style="light" translucent />
