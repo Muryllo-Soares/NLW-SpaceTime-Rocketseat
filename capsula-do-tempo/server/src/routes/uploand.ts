@@ -8,16 +8,17 @@ import { promisify } from 'node:util'
 const pump = promisify(pipeline)
 
 export async function uploadRoutes(app: FastifyInstance) {
-  app.post('/upload', async (request) => {
+  app.post('/upload', async (request, reply) => {
     const upload = await request.file({
       limits: {
-        fileSize: 5_242_880, // 5MB
+        fileSize: 5_242_880, // 5mb
       },
     })
 
     if (!upload) {
       return reply.status(400).send()
     }
+
     const mimeTypeRegex = /^(image|video)\/[a-zA-Z]+/
     const isValidFileFormat = mimeTypeRegex.test(upload.mimetype)
 
@@ -31,7 +32,7 @@ export async function uploadRoutes(app: FastifyInstance) {
     const fileName = fileId.concat(extension)
 
     const writeStream = createWriteStream(
-      resolve(__dirname, '../../uploads/', fileName),
+      resolve(__dirname, '..', '..', 'uploads', fileName),
     )
 
     await pump(upload.file, writeStream)
