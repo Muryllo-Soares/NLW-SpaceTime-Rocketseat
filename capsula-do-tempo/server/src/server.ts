@@ -14,7 +14,7 @@ app.register(multipart)
 
 app.register(require('@fastify/static'), {
   root: resolve(__dirname, '../uploads'),
-  prefix: '/uploads'
+  prefix: '/uploads',
 })
 
 // HTTP Method: GET, POST, PUT, PATCH, DELETE
@@ -31,7 +31,7 @@ app.register(uploadRoutes)
 
 app
   .listen({
-    host: '0.0.0.0',
+    host: '::',
     port: 3333,
   })
   .then(() => {
