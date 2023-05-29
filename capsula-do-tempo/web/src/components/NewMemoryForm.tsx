@@ -29,9 +29,11 @@ export function NewMemoryForm() {
     }
 
     const token = Cookie.get("token");
+    
+    console.log(formData.get("isPublic"))
 
     await api.post(
-      '/memories',
+      "/memories",
       {
         coverUrl,
         content: formData.get("content"),
@@ -44,7 +46,7 @@ export function NewMemoryForm() {
       }
     );
 
-    router.push('/');
+    router.push("/");
   }
 
   return (
